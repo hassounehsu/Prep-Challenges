@@ -21,9 +21,10 @@
 //  2- The first letters of the firstName and lastName should be capital letter
 
 const objLat = (obj) => {
-    return "my name is " + obj.firstName + " " + obj.lastName + " I am " + obj.age + " YO, and I love " + obj.hobby + ".";
+    let x = `my name is ${obj.firstName.charAt(0).toUpperCase() + obj.firstName.slice(1)} ${obj.lastName.charAt(0).toUpperCase() + obj.lastName.slice(1)} I am ${(obj.age)} YO, and I love ${(obj.hobby)}.`
+    return x;
 };
-// -------------------------------------------------------------------------------------------------------
+
 
 // -------------------------------------------------------------------------------------------------------
 //  Challenge 2:
@@ -84,6 +85,23 @@ const objLat = (obj) => {
 //  1- Full name is first name + last name
 //  2- If one of the names is null don`t add it to the full name
 
+
+
+
+const cvFormatter = (arr) => {
+    let output = []
+    for (let i = 0; i < arr.length; i++) {
+
+        if (arr[i].lastName == null && arr[i].yearsOfExperience > 1) {
+            output.push({ fullName: `${arr[i].firstName}`, tech: `${arr[i].tech}` })
+
+        } else if (arr[i].yearsOfExperience > 1) {
+            output.push({ fullName: `${arr[i].firstName} ${arr[i].lastName}`, tech: `${arr[i].tech}` })
+        } else continue;
+    } return output;
+
+};
+/*
 const cvFormatter = (arr) => {
     let newArr = [];
     for (let i = 0; i < arr.length; ++i) {
@@ -96,6 +114,7 @@ const cvFormatter = (arr) => {
     }
     return newArr;
 };
+*/
 // -------------------------------------------------------------------------------------------------------
 
 // -------------------------------------------------------------------------------------------------------
