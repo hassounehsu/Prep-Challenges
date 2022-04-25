@@ -28,6 +28,7 @@
 
 const customerAndAge = (obj) => {
   for (const property in obj) {return ["Customer Name :" + property.split(',') + " , Age :"+ obj[property] ]; }
+
 };
 // -------------------------------------------------------------------------------------------------------
 
